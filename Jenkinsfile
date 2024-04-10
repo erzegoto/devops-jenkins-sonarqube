@@ -9,6 +9,10 @@ node {
         git url: 'https://github.com/erzegoto/devops-jenkins-sonarqube.git'                
     }
 
+    stage('init') {
+        sh "${GRADLE_HOME}/bin/gradle init"
+    }
+    
     stage('build') {
         sh "${GRADLE_HOME}/bin/gradle build"
     }
